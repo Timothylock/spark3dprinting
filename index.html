@@ -3,79 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spark3D Printing</title>
+    <title>Spark3DPrinting - 3D printing enthusiasts since 2020</title>
+    <meta name="description" content="Spark3DPrinting: 3D printing enthusiasts since 2020. Free designs on MakerWorld and Thingiverse, finished prints in our Etsy shop. Thousands of orders shipped.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --paper: #f5f6f4;
+            --ink: #181b20;
+            --ink-soft: #3f444d;
+            --muted: #5b616b;
+            --line: #dfe2dd;
+            --red: #c22a24;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        .page {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 64px 32px 56px;
+        }
+
+        .top {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f4;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 24px;
+            margin-bottom: 56px;
+        }
+        .top img { width: 168px; height: auto; display: block; }
+        .top .est {
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--muted);
+            white-space: nowrap;
+            padding-top: 6px;
         }
 
-        .container {
-            text-align: center;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            width: 90%;
+        h1 {
+            font-family: "Bricolage Grotesque", -apple-system, "Segoe UI", sans-serif;
+            font-weight: 700;
+            font-size: 2.6rem;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+        }
+        h1 .red { color: var(--red); }
+
+        .story {
+            font-size: 1.08rem;
+            color: var(--ink-soft);
+            max-width: 60ch;
+        }
+        .story p { margin-bottom: 16px; }
+        .story strong { color: var(--ink); }
+
+        .elsewhere {
+            margin-top: 64px;
+        }
+        .elsewhere h2 {
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 8px;
         }
 
-        .logo {
-            margin-bottom: 20px;
+        .dest {
+            display: block;
+            text-decoration: none;
+            color: var(--ink);
+            padding: 26px 4px;
+            border-top: 1px solid var(--line);
+        }
+        .dest:last-child { border-bottom: 1px solid var(--line); }
+        .dest .row {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 16px;
+        }
+        .dest .name {
+            font-family: "Bricolage Grotesque", -apple-system, "Segoe UI", sans-serif;
+            font-weight: 600;
+            font-size: 1.65rem;
+            letter-spacing: -0.01em;
+            text-decoration: underline;
+            text-decoration-color: transparent;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 6px;
+            transition: text-decoration-color 0.2s ease;
+        }
+        .dest:hover .name { text-decoration-color: var(--red); }
+        .dest .go {
+            font-size: 1.3rem;
+            color: var(--red);
+            transform: translateX(0);
+            transition: transform 0.25s ease;
+        }
+        .dest:hover .go { transform: translateX(6px); }
+        .dest .blurb {
+            margin-top: 6px;
+            color: var(--muted);
+            font-size: 0.98rem;
+            max-width: 52ch;
         }
 
-        .logo img {
-            max-width: 150px;
-            height: auto;
+        footer {
+            margin-top: 72px;
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+            color: var(--muted);
         }
 
-        .title {
-            font-size: 2em;
-            color: #333;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .message {
-            font-size: 1.2em;
-            color: #333;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-        .message strong{
-            color: #d32f2f;
+        @media (max-width: 560px) {
+            .page { padding: 44px 22px 40px; }
+            h1 { font-size: 2rem; }
+            .dest .name { font-size: 1.35rem; }
+            .top { margin-bottom: 40px; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">
-            <img src="logo.png" alt="Logo">
+    <div class="page">
+        <div class="top">
+            <img src="logo.png" alt="Spark3DPrinting">
+            <div class="est">Est. 2020</div>
         </div>
-        <div class="title">
-            Thank You
+
+        <h1>Made by people who <span class="red">can't stop printing.</span></h1>
+
+        <div class="story">
+            <p>Spark3DPrinting started in 2020 with a single printer and a long list of things we wanted to exist. Then came a second printer, a shelf of filament, and a lot of late nights watching first layers go down.</p>
+            <p>Somewhere along the way the hobby turned into a small shop. We've since designed, printed, and shipped <strong>thousands of orders</strong> - every one of them made by people who genuinely love this stuff.</p>
+            <p>The files are free if you want to print them yourself. If you'd rather skip the printing, finished pieces are in the Etsy shop.</p>
         </div>
-        <div class="message">
-            After four incredible years serving over 50,000 valued customers, we are announcing the difficult decision to close our doors.
+
+        <div class="elsewhere">
+            <h2>Elsewhere</h2>
+            <a class="dest" href="https://makerworld.com/en/@spark3dprinting" target="_blank" rel="noopener">
+                <div class="row">
+                    <span class="name">MakerWorld</span>
+                    <span class="go">&rarr;</span>
+                </div>
+                <div class="blurb">Our newest designs, with print profiles ready to go.</div>
+            </a>
+            <a class="dest" href="https://www.thingiverse.com/spark3dprinting/" target="_blank" rel="noopener">
+                <div class="row">
+                    <span class="name">Thingiverse</span>
+                    <span class="go">&rarr;</span>
+                </div>
+                <div class="blurb">The full back catalog - every free STL we've ever published.</div>
+            </a>
+            <a class="dest" href="https://www.etsy.com/shop/Spark3DPrinting" target="_blank" rel="noopener">
+                <div class="row">
+                    <span class="name">Etsy shop</span>
+                    <span class="go">&rarr;</span>
+                </div>
+                <div class="blurb">Finished prints, made to order and shipped to your door.</div>
+            </a>
         </div>
-        <div class="message">
-            We are immensely grateful for the support and loyalty you've shown us. It has been an honor to be a part of your lives.
-        </div>
-        <div class="message">
-            Unfortunately, recent tariffs imposed by the President have significantly made it harder for us to source the materials we need. We are suspending our small business until further notice.
-        </div>
-        <div class="message closing">
-            Thank you for everything. We will cherish the memories.
-        </div>
-        <div class="message closing">
-            Your Spark3DPrinting team
-        </div>
+
+        <footer>
+            <span>&copy; 2026 Spark3DPrinting</span>
+        </footer>
     </div>
 </body>
 </html>
